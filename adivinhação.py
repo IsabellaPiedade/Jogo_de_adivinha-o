@@ -9,17 +9,23 @@ total_de_tentativas = 3
 
 for rodada in range(1,total_de_tentativas + 1): 
     print(F"Tentativa {rodada} de {total_de_tentativas}")
-    chute_str = int(input("Digite o seu numero: "))
-    print("Você digitou" , chute_str)
+    chute = int(input("Digite um número de 1 a 30: "))
+    print("Você digitou" , chute)
+
+    if (chute < 1 or chute > 30):
+        print("Você deve digitar um número de 1 a 30")
+        continue
+
           
 
-    if (numero_secreto == chute_str):
+    if (numero_secreto == chute):
         print("Você acertou")
+        break
 
     else:
-        if(chute_str > numero_secreto):
+        if(chute > numero_secreto):
             print("Você errou! Seu chute foi maior do que o número secreto.")
-        elif(chute_str < numero_secreto):
+        elif(chute < numero_secreto):
             print("Você errou! Seu chute foi menor que o número secreto.")
     
 
